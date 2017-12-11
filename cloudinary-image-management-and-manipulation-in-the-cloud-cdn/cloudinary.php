@@ -9,6 +9,7 @@ Author: Cloudinary Ltd.
 Author URI: http://cloudinary.com/
 */
 define('cloudinary_VERSION', '1.1.7');
+
 define('cloudinary_PLUGIN_URL', plugin_dir_url( __FILE__ ));
 require "cloudinary_api.php" ;
 require "api.php" ;
