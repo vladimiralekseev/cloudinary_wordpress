@@ -4,11 +4,11 @@ Plugin Name: Cloudinary
 Plugin URI: http://cloudinary.com/
 Description: Cloudinary allows you to upload your images to the cloud. They'll be available to your visitors through a fast content delivery network, improving your website's loading speed and overall user experience. With Cloudinary, you can transform uploaded images without leaving Wordpress - apply effects (sharpen, gray scale, sepia, and more), smart cropping and re-sizing (including face detection based cropping), and much more.
 
-Version:  1.1.6
+Version:  1.1.7
 Author: Cloudinary Ltd.
 Author URI: http://cloudinary.com/
 */
-define('cloudinary_VERSION', '1.1.6');
+define('cloudinary_VERSION', '1.1.7');
 define('cloudinary_PLUGIN_URL', plugin_dir_url( __FILE__ ));
 require "cloudinary_api.php" ;
 require "api.php" ;
@@ -553,7 +553,7 @@ class CloudinaryPlugin
       $full_path = $upload_dir['basedir'].'/'.$img_path;
     }
     try {
-      $result = CloudinaryUploader::upload($full_path,array('use_filename'=>True)); 
+      $result = CloudinaryUploader::upload($full_path,array('use_filename'=>TRUE)); 
     } catch(Exception $e) {
       return $e->getMessage();
     }
@@ -565,7 +565,7 @@ class CloudinaryPlugin
     } else {
       $attachment_id = NULL;      
     }
-    $this->register_image($result["url"], $post_parent, $attachment_id, $attachment, $result["width"], $result["height"]);
+    $this->register_image($result["secure_url"], $post_parent, $attachment_id, $attachment, $result["width"], $result["height"]);
     if ($migrate) {
       $errors = array();
       $this->update_image_src_all($attachment_id, $result, $old_url, $result["url"], TRUE, $errors);
