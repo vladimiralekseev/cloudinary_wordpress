@@ -10,9 +10,9 @@ Author URI: http://cloudinary.com/
 */
 define('cloudinary_VERSION', '1.1.7');
 define('cloudinary_PLUGIN_URL', plugin_dir_url( __FILE__ ));
-require "cloudinary_api.php" ;
-require "api.php" ;
-require "uploader.php" ;
+require plugin_dir_path( __FILE__ ) . "cloudinary_api.php" ;
+require plugin_dir_path( __FILE__ ) . "api.php" ;
+require plugin_dir_path( __FILE__ ) . "uploader.php" ;
 
 define ('CLOUDINARY_BASE_URL', "https://cloudinary.com");
 define ('CLOUDINARY_UNIQUE_ID', "cloudinary-image-management-and-manipulation-in-the-cloud-cdn");
