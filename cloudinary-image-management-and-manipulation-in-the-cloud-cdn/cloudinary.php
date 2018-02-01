@@ -151,6 +151,12 @@ class CloudinaryPlugin
     $fullpathfilename = $uploads['path'] . "/" . $filename;
 
     $response = wp_remote_get($url);
+
+    if( is_wp_error( $response ) ) {
+      $error = $response->get_error_message();      
+      return $public_id . ' cannot be migrate away. ' . $error ;
+    }
+
     if ($response["response"]["code"] != 200) {
       $error = $response["headers"]["x-cld-error"];
       if (!$error) $error = "Unable to migrate away $url";
