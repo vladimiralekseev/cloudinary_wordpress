@@ -519,7 +519,8 @@ class CloudinaryPlugin
             # Migrate Out
             list($old_img_src) = $this->build_resize_url($old_url, $attachment_metadata, $wanted_size);
             if ($old_img_src) {
-              if ($old_img_src != $src[1]) {
+              //Compare URLs ignoring secure protocol
+              if (str_replace('https://', 'http://', $old_img_src) != str_replace('https://', 'http://', $src[1])) {
                 error_log("Cannot automatically migrate image - non-standard image url detected " . $src[1] . " expected $old_img_src requested size $wanted_size");
                 $errors[$post->ID] = true;
                 return false;

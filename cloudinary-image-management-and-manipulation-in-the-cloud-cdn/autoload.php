@@ -1,7 +1,7 @@
 <?php
 /**
  * Cloudinary wordpress autoloader
- * Include this file to autoload cloudinary files from src/ directory
+ * Include this file to autoload cloudinary files from lib/ directory
  */
 
 define ('CLOUDINARY_NAMESPACE', 'Cloudinary');
