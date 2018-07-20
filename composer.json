@@ -13,6 +13,5 @@
     "support": {
       "email": "info@cloudinary.com",
       "issues": "https://github.com/cloudinary/cloudinary_wordpress/issues"
-    },
-    "minimum-stability": "stable"
+    }
 }
