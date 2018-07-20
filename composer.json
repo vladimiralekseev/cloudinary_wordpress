@@ -14,10 +14,5 @@
       "email": "info@cloudinary.com",
       "issues": "https://github.com/cloudinary/cloudinary_wordpress/issues"
     },
-    "autoload": {
-        "psr-4": {
-            "App\\": "cloudinary-image-management-and-manipulation-in-the-cloud-cdn/"
-        }
-    },
     "minimum-stability": "stable"
 }
